@@ -39,4 +39,20 @@ $(function() {
         equal(punctuation.total, 10, "total punctuation");
     });
     
+    test("words", 4, function() {
+        var words = dna('a a a b b c sssssssssssssssssssssssssss').words();
+        equal(words.a, 3, "three words");
+        equal(words.b, 2, "two words");
+        equal(words.c, 1, "one word");
+        equal(words.sssssssssssssssssssssssssss, 1, "long word");
+    });
+    
+    test("characters", 5, function() {
+        var characters = dna('aa a b b c ! *').characters();
+        equal(characters.a, 3, "three words");
+        equal(characters.b, 2, "two words");
+        equal(characters.c, 1, "one word");
+        equal(characters['!'], 1, "exclamation");
+        equal(characters['*'], 1, "star");
+    });
 });

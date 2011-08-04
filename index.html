@@ -2,13 +2,68 @@
 <html>
   <head>
     <title>Javascript DNA</title>
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:800italic,300,600" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:800,800italic,300,600" rel="stylesheet">
     <link rel="stylesheet" href="site/style.css" />
   </head>
   <body>
-    <h1>Javascript DNA</h1>
-    <textarea></textarea>
-    <a href="#">Show Code DNA</a>
+    <h1 id="title">Javascript DNA</h1>
+    <div id="input-wrap">
+      <textarea id="input">[]{}[]{} () UPPERCASE lowercase 12345 +++++ ==  |||||||| .... ,,,, :;:;:;:;: """""</textarea>
+    </div>
+    <a id="trigger" href="#">Show DNA</a>
+    <div id="filling">
+      <div class="filling" id="braces">
+        <h2>Braces</h2>
+        <div class="sub-filling" id="braces-square">
+          <h3>Square</h3>
+        </div>
+        <div class="sub-filling" id="braces-curly">
+          <h3>Curly</h3>
+        </div>
+        <div class="sub-filling" id="braces-round">
+          <h3>Round</h3>
+        </div>
+      </div>
+      <div class="filling" id="letters">
+        <h2>Letters</h2>
+        <div class="sub-filling" id="letters-upper">
+          <h3>Uppercase</h3>
+        </div>
+        <div class="sub-filling" id="letters-lower">
+          <h3>Lowercase</h3>
+        </div>
+      </div>
+      <div class="filling" id="numbers">
+        <h2>Numbers</h2>
+      </div>
+      <div class="filling" id="operators">
+        <h2>Operators</h2>
+        <div class="sub-filling" id="operators-math">
+          <h3>Math</h3>
+        </div>
+        <div class="sub-filling" id="operators-compare">
+          <h3>Compare</h3>
+        </div>
+        <div class="sub-filling" id="operators-bitlogic">
+          <h3>Bitwise &amp; Logical</h3>
+        </div>
+      </div>
+      <div class="filling" id="punctuation">
+        <h2>Punctuation</h2>
+        <div class="sub-filling" id="punctuation-dot">
+          <h3>Dot</h3>
+        </div>
+        <div class="sub-filling" id="punctuation-comma">
+          <h3>Comma</h3>
+        </div>
+        <div class="sub-filling" id="punctuation-colon">
+          <h3>Colon</h3>
+        </div>
+        <div class="sub-filling" id="punctuation-quote">
+          <h3>Quote</h3>
+        </div>
+      </div>
+    </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <script src="dna.min.js"></script>
     <script src="site/demo.js"></script>

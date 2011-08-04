@@ -11,7 +11,8 @@
     // helpers
 
     function regexCount(str, rgx) {
-        return (str.match(rgx) || []).length;
+        var output = str.match(rgx);
+        return output ? output.length : 0;
     }
 
     // DNA prototype object
@@ -58,6 +59,32 @@
                 };
             output.total = output.dot + output.comma + output.colon + output.quote;
             return output;
+        },
+        words : function () {
+            var words = this.s.match(/\b\w+\b/g),
+                outwords = {},
+                i;
+            for (i = 0; i < words.length; i++) {
+                if (outwords[words[i]]) {
+                    outwords[words[i]]++;
+                } else {
+                    outwords[words[i]] = 1;
+                }
+            }
+            return outwords;
+        },
+        characters : function () {
+            var characters = this.s.match(/./g),
+                outwords = {},
+                i;
+            for (i = 0; i < characters.length; i++) {
+                if (outwords[characters[i]]) {
+                    outwords[characters[i]]++;
+                } else {
+                    outwords[characters[i]] = 1;
+                }
+            }
+            return outwords;
         }
     };
 
