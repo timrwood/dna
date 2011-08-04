@@ -65,10 +65,10 @@
                 outwords = {},
                 i;
             for (i = 0; i < words.length; i++) {
-                if (outwords[words[i]]) {
-                    outwords[words[i]]++;
+                if (outwords['_' + words[i]]) {
+                    outwords['_' + words[i]]++;
                 } else {
-                    outwords[words[i]] = 1;
+                    outwords['_' + words[i]] = 1;
                 }
             }
             return outwords;
@@ -78,10 +78,10 @@
                 outwords = {},
                 i;
             for (i = 0; i < characters.length; i++) {
-                if (outwords[characters[i]]) {
-                    outwords[characters[i]]++;
+                if (outwords['_' + characters[i]]) {
+                    outwords['_' + characters[i]]++;
                 } else {
-                    outwords[characters[i]] = 1;
+                    outwords['_' + characters[i]] = 1;
                 }
             }
             return outwords;

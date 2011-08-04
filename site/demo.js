@@ -121,6 +121,54 @@
             
             this.setAmounts([braces.total / total, letters.total / total, numbers / total, operators.total / total, punctuation.total / total]);
             
+            this.setWords();
+            this.setCharacters();
+        },
+        setWords : function () {
+            var words = this.dna.words(),
+                count = [],
+                html = '',
+                i,
+                max = 0;
+            
+            for (i in words) {
+                max = Math.max(max, words[i]);
+                
+                if (count[words[i]]) {
+                    count[words[i]].push(i.slice(1));
+                } else {
+                    count[words[i]] = [i.slice(1)];
+                }
+            }
+            
+            for (i in count) {
+                html = '<div class="word"><p>' + count[i].join(', ') + '</p><div class="bar" style="right:' + (65 - Math.round(65 * (i / max))) + '%" >' + i + '</div></div>' + html;
+            }
+            
+            $('#words').html(html);
+        },
+        setCharacters : function () {
+            var words = this.dna.characters(),
+                count = [],
+                html = '',
+                i,
+                max = 0;
+            
+            for (i in words) {
+                max = Math.max(max, words[i]);
+                
+                if (count[words[i]]) {
+                    count[words[i]].push(i.slice(1));
+                } else {
+                    count[words[i]] = [i.slice(1)];
+                }
+            }
+            
+            for (i in count) {
+                html = '<div class="word"><p>' + count[i].join(', ') + '</p><div class="bar" style="right:' + (65 - Math.round(65 * (i / max))) + '%" >' + i + '</div></div>' + html;
+            }
+            
+            $('#characters').html(html);
         }
     };
     
