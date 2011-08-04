@@ -193,7 +193,7 @@ button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
  * 2. Allow only vertical resizing
  */
 
-textarea { overflow:auto; vertical-align:top; resize:vertical; }
+textarea { overflow:auto; vertical-align:top; resize:vertical; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 /* Colors for form validity */
 input:valid, textarea:valid {  }
@@ -214,22 +214,38 @@ td { vertical-align: top; }
 
 html { background:#111; }
    
-h1 { font-family: 'Open Sans', sans-serif; font-size:36px; font-weight:800; font-style:italic; }
+h1 { font-family: 'Open Sans', sans-serif; font-size:48px; font-weight:800; font-style:italic; }
 h2 { font-family: 'Open Sans', sans-serif; font-size:24px; font-weight:800; font-style:italic; }
 h3 { font-family: 'Open Sans', sans-serif; font-size:18px; font-weight:300; }
 
-#input-wrap { margin:0 20px 20px; }
-#input { margin:0; width:100%; display:block; height:300px; border:1px solid #ddd; }
+.sub-title { margin:0 40px 20px; color:#ccc; padding-left:25%; border-bottom:1px solid #ccc; line-height:40px; }
 
-#title { padding:20px 40px; }
+#input-wrap { margin:0 40px 10px; }
+#input { margin:0; width:100%; display:block; height:300px; border:1px solid #555; background:#333; color:#ccc; padding:5px; font-family:Consolas, "Lucida Console", Monaco, monospace; }
 
-#trigger { margin:0 20px 20px; display:block; padding:10px; font-family: 'Open Sans', sans-serif; font-size:24px; font-weight:800; font-style:italic; text-align:center; text-decoration:none; }
+#title { padding:40px 40px; margin-bottom:20px; color:#ccc; border-bottom:3px solid #ccc; background:#000; }
 
-#filling { margin:0 20px 20px; position:relative; height:500px; }
+#trigger { margin:0 40px 40px; display:block; padding:10px; font-family: 'Open Sans', sans-serif; font-size:24px; font-weight:800; font-style:italic; text-align:center; text-decoration:none; border-radius:10px; border:1px solid #888; background:#666; color:#111; }
+#trigger:hover { background:#444; border-color:#666; }
+
+#filling { margin:0 40px 40px; position:relative; height:500px; }
 .filling { position:absolute; top:0; bottom:0; overflow:hidden; }
 .filling h2 { position:absolute; top:-7px; left:-2px; color:#111; z-index:3; }
 .sub-filling { position:absolute; left:0; right:0; z-index:2; overflow:hidden; }
-.sub-filling h3 { position:absolute; bottom:-3px; right:0; color:#111; text-align:right; }
+.sub-filling h3 { position:absolute; top:50%; margin-top:-10px; line-height:20px; right:0; left:0; color:#111; text-align:center; }
+
+/* ==========================================================================
+   Fillings labels
+   ========================================================================== */
+
+#labels { margin:0 40px 20px; height:30px; line-height:30px; }
+.label { height:30px; width:20%; float:left; text-align:center; }
+#label-braces { color:#D76B1D; }
+#label-letters { color:#CAAD0D; }
+#label-numbers { color:#75BC1F; }
+#label-operators { color:#259EB5; }
+#label-punctuation { color:#2B51D2; }
+
 
 /* ==========================================================================
    Initial state of fillings
@@ -261,7 +277,7 @@ h3 { font-family: 'Open Sans', sans-serif; font-size:18px; font-weight:300; }
    Words
    ========================================================================== */
 
-.word-list { margin:0 20px 20px; font-family: 'Open Sans', sans-serif; font-size:18px; font-weight:300; line-height:24px; }
+.word-list { margin:0 40px 40px; font-family: 'Open Sans', sans-serif; font-size:18px; font-weight:300; line-height:24px; }
 .word { margin-bottom:10px; position:relative; }
 .word p { width:30%; color:#259EB5; text-align:right; }
 .bar { position:absolute; top:0; bottom:0; right:0; left:30%; margin-left:10px; padding-left:5px; background:#259EB5; color:#fff; font-weight:800; font-style:italic; }
